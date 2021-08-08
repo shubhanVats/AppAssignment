@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.demoapp.data.remote.DataState
 import com.example.demoapp.databinding.ActivityMainBinding
+import com.example.demoapp.utills.toast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
                             colorsData?.let { }
                         }
                     }
+                    is DataState.GenericError -> dataState.errorResponse?.message?.let { toast(it) }
+                    DataState.Loading -> {
+                        // perform loader operation
+                    }
+                    is DataState.NetworkError -> toast(dataState.errorMessage)
                 }
             }
 
