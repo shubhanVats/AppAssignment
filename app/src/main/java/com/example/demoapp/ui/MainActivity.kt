@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         setObservables()
+
+        mainViewModel.setStateEvent(MainViewModel.MainEvent.ColorResponseItem)
     }
 
     private fun setObservables() {
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     private fun bindResult(data: ArrayList<ColorResponseObject>) {
         activityMainBinding.apply {
             activityMainBinding.colorAdapter = ColorListAdapter()
-            colorAdapter.addItems(data)
+            colorAdapter?.addItems(data)
         }
     }
 }

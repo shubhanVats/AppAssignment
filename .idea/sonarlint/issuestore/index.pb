@@ -3,23 +3,7 @@ E
 app/gradle.properties,9\4\94e3e10af8bb8062a0d4e9b8f6ce8b7daeeb814f
 y
 Iapp/src/main/java/com/example/demoapp/data/model/network/ErrorResponse.kt,4\6\464f3469b8eacd19e57d7c8a6f1a2e00d8acbe36
-l
-<app/src/main/java/com/example/demoapp/data/SessionManager.kt,4\2\42d3cd6cf4c4f790350718b72287cb8ab8be78cd
-q
-Aapp/src/main/java/com/example/demoapp/data/remote/EntityMapper.kt,4\6\46f375d92d20f7857a8e17f23f2c805fda261ea6
-o
-?app/src/main/java/com/example/demoapp/data/remote/Exceptions.kt,f\f\ff3f03a7ce35eb94fb1f1a7ec2c485e6268f94cd
-r
-Bapp/src/main/java/com/example/demoapp/data/remote/NetworkHelper.kt,3\3\330a72434fbc0eeb79bd101df9df2ef659c00897
-x
-Happ/src/main/java/com/example/demoapp/data/remote/api/AuthInterceptor.kt,1\9\19c0a43da0cd8c92a52aa3254b37d6f013f7cca4
-w
-Gapp/src/main/java/com/example/demoapp/data/remote/NetworkingConstant.kt,8\2\824efcadb8c1c0e8b07a525888de42fc975da258
 w
 Gapp/src/main/java/com/example/demoapp/data/remote/api/SafeApiRequest.kt,2\f\2fa57d16d9cf861fddc76a1abe32fa513ca34d09
 a
 1app/src/main/java/com/example/demoapp/base/App.kt,e\a\ea7bc5fa3b9e098490945144fe38e1b5f5d31617
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-i
-9app/src/main/java/com/example/demoapp/di/NetworkModule.kt,6\a\6a2833acadffcf6997e262ee330afb4766ac77b0

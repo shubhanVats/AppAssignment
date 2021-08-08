@@ -1,9 +1,7 @@
 package com.example.demoapp.di
 
 import com.example.demoapp.BuildConfig
-import com.example.demoapp.data.SessionManager
 import com.example.demoapp.data.remote.api.ApiService
-import com.example.demoapp.data.remote.api.AuthInterceptor
 import com.squareup.moshi.*
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -31,15 +29,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideServiceInterceptor(sessionManager: SessionManager) =
-        AuthInterceptor(sessionManager)
-
-
-    @Singleton
-    @Provides
     fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-        authInterceptor: AuthInterceptor
     ): OkHttpClient {
         val okHttpClient = OkHttpClient().newBuilder()
 
@@ -48,7 +39,6 @@ object NetworkModule {
         okHttpClient.readTimeout(40, TimeUnit.SECONDS)
         okHttpClient.writeTimeout(40, TimeUnit.SECONDS)
         okHttpClient.addInterceptor(loggingInterceptor)
-        okHttpClient.addInterceptor(authInterceptor)
         okHttpClient.build()
         return okHttpClient.build()
     }

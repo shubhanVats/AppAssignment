@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
 
             when (mainEvent) {
-                is MainEvent.colorResponseItem -> {
+                is MainEvent.ColorResponseItem -> {
 
                     mainRepo.getColorResponse()
                         .onEach {
@@ -51,7 +51,7 @@ class MainViewModel @Inject constructor(
 
     sealed class MainEvent {
 
-        object colorResponseItem : MainEvent()
+        object ColorResponseItem : MainEvent()
 
     }
 }
