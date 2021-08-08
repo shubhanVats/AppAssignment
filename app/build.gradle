@@ -53,6 +53,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    lintOptions {
+        abortOnError true
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -112,4 +121,7 @@ dependencies {
 
     // picasso image loader
     implementation 'com.squareup.picasso:picasso:2.71828'
+}
+kapt {
+    correctErrorTypes true
 }
