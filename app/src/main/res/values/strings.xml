@@ -5,5 +5,5 @@
     <string name="color_image_view">colorImageView</string>
     <string name="color_tittle">Tittle :</string>
     <string name="color_hex">Hex :</string>
-    <string name="favoritebutton">favoriteButton</string>
+    <string name="favoriteButton">favoriteButton</string>
 </resources>

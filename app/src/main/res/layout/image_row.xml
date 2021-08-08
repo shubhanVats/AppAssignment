@@ -71,7 +71,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
             android:background="@android:color/transparent"
-            android:contentDescription="@string/favoritebutton"
+            android:contentDescription="@string/favoriteButton"
             android:src="@drawable/ic_favorite"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
