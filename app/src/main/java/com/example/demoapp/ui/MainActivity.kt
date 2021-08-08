@@ -9,6 +9,7 @@ import com.example.demoapp.data.remote.DataState
 import com.example.demoapp.databinding.ActivityMainBinding
 import com.example.demoapp.utills.toast
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -36,9 +37,7 @@ class MainActivity : AppCompatActivity() {
                         dataState.data.data?.let { bindResult(it) }
                     }
                     is DataState.GenericError -> dataState.errorResponse?.message?.let { toast(it) }
-                    DataState.Loading -> {
-                        // perform loader operation
-                    }
+                    DataState.Loading -> Timber.e(DataState.Loading.toString())
                     is DataState.NetworkError -> toast(dataState.errorMessage)
                 }
             }
