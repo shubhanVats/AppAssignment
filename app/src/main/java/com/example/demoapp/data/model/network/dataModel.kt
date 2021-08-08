@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class ColorResponseItem(
+data class ColorResponseObject(
     @Json(name = "apiUrl")
     val apiUrl: String,
     @Json(name = "badgeUrl")

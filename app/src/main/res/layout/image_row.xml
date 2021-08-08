@@ -2,6 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="colorResponseObject"
+            type="com.example.demoapp.data.model.network.ColorResponseObject" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_120sdp"
             android:contentDescription="@string/color_image_view"
-            android:src="@color/cardview_dark_background"
+            loadProfileImage="@{ colorResponseObject.url }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:textColor="@color/black"
+            android:text="@{ colorResponseObject.title, default=@string/na }"
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/colorTittle"
@@ -59,6 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:textColor="@color/black"
+            android:text="@{ colorResponseObject.hex, default=@string/na }"
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/colorHex"

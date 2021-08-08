@@ -1,8 +1,10 @@
-package com.example.demoapp
+package com.example.demoapp.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.demoapp.adapter.ColorListAdapter
+import com.example.demoapp.data.model.network.ColorResponseObject
 import com.example.demoapp.data.remote.DataState
 import com.example.demoapp.databinding.ActivityMainBinding
 import com.example.demoapp.utills.toast
@@ -29,13 +31,7 @@ class MainActivity : AppCompatActivity() {
 
                 when (dataState) {
                     is DataState.Success -> {
-                        val data = dataState.data
-
-                        if (data.success) {
-                            val colorsData = data.data
-
-                            colorsData?.let { }
-                        }
+                        dataState.data.data?.let { bindResult(it) }
                     }
                     is DataState.GenericError -> dataState.errorResponse?.message?.let { toast(it) }
                     DataState.Loading -> {
@@ -46,6 +42,12 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
 
+    private fun bindResult(data: ArrayList<ColorResponseObject>) {
+        activityMainBinding.apply {
+            activityMainBinding.colorAdapter = ColorListAdapter()
+            colorAdapter.addItems(data)
+        }
     }
 }

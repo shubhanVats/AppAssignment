@@ -1,11 +1,11 @@
-package com.example.demoapp
+package com.example.demoapp.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.demoapp.data.model.network.BaseResponse
-import com.example.demoapp.data.model.network.ColorResponseItem
+import com.example.demoapp.data.model.network.ColorResponseObject
 import com.example.demoapp.data.remote.DataState
 import com.example.demoapp.data.repository.MainRepo
 import com.example.demoapp.utills.Event
@@ -21,10 +21,10 @@ class MainViewModel @Inject constructor(
     private val mainRepo: MainRepo
 
 ) : ViewModel() {
-    val getColorResponseData: LiveData<Event<DataState<BaseResponse<ArrayList<ColorResponseItem>>>>>
+    val getColorResponseData: LiveData<Event<DataState<BaseResponse<ArrayList<ColorResponseObject>>>>>
         get() = getColorResponse
 
-    private val getColorResponse: MutableLiveData<Event<DataState<BaseResponse<ArrayList<ColorResponseItem>>>>> =
+    private val getColorResponse: MutableLiveData<Event<DataState<BaseResponse<ArrayList<ColorResponseObject>>>>> =
         MutableLiveData()
 
     fun setStateEvent(mainEvent: MainEvent) {
